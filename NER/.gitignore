@@ -1,0 +1,15 @@
+# jupyter notebook
+.ipynb_checkpoints
+
+# python
+__pycache__
+
+# vscode
+.vscode
+
+# model save
+beto.*
+checkpoint
+
+# dataset
+/dataset/*.txt
