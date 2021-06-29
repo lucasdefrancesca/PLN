@@ -1,4 +1,6 @@
 numpy==1.19.5
 tensorflow==2.5.0
+keras==2.4.3
 scikit-learn==0.23.2
 transformers==4.6.1
+notebook==6.4.0

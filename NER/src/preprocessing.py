@@ -20,7 +20,7 @@ class SentencesGenerate:
         return (X, y, len(X))
 
     def generate(self):
-        n, sent, tags = 0, [], []
+        sent, tags = [], []
         with open(self._path, 'r') as data:
             for line in data:
                 if line != '\n':
@@ -29,11 +29,10 @@ class SentencesGenerate:
                     tags.append(tag)
                     self.labels.add(tag)
                     self.vocab.add(token)
-                    n += 1
                 
                 else:
                     assert len(sent) == len(tags)
                     if self._min_length < len(sent):
                         self.X.append(sent)
                         self.y.append(tags)
-                    n, sent, tags = 0, [], []
+                    sent, tags = [], []

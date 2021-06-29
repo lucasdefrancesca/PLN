@@ -13,7 +13,7 @@
 
 Para la implementación de los distintos modelos de reconocimiento de entidades nombradas, vamos a utilizar los datos del desafió abierto [CoNLL-2002](https://www.aclweb.org/anthology/W02-2024.pdf).
 
-Mostraré tres enfoques distintos para el desarrollo un sistema NER. El primero se basa en una implementación de un clasificador con ventana deslizante usando *support vector machine* como modelo (directorio  ``` SVM```) . Luego una implementación basada en redes neuronales, donde se crea un modelo híbrido el cual posee en la arquitectura una capa BiLSTM y una CNN para la representación a nivel carácter de las palabras (directorio  ``` BiLSTM```). Y por último una implementación utilizando modelos de lenguajes con la arquitectura *Transformers*, en este caso utilizando el modelo de lenguaje BETO (*Spanish BERT model*) por medio de la librería [HuggingFace](https://huggingface.co/) (directorio  ```BERT```).
+Mostraré tres enfoques distintos para el desarrollo de un sistema NER. El primero se basa en una implementación de un clasificador con ventana deslizante usando *support vector machine* como modelo (directorio  ``` SVM```) . Luego una implementación basada en redes neuronales, donde se crea un modelo híbrido el cual posee en la arquitectura una capa BiLSTM y una CNN para la representación a nivel carácter de las palabras (directorio  ``` BiLSTM```). Y por último una implementación utilizando modelos de lenguajes con la arquitectura *Transformers*, en este caso utilizando el modelo de lenguaje BETO (*Spanish BERT model*) por medio de la librería [HuggingFace](https://huggingface.co/) (directorio  ```BERT```).
 
 ### Obtener el *Dataset*
 
@@ -38,9 +38,19 @@ nuevo      O
 boletín    O
 trimestral O
 ```
+### Correr con Docker
+
+Construcción de la imagen 
+```
+docker build -t ner .
+```
+
+Ejecución de la imagen
+```
+docker run --rm -p 8888:8888 ner
+```
 
 ### Trabajo futuro
 ```
 - [ ] Crear Blog Post mas detallado sobre NER.
 ```
-
